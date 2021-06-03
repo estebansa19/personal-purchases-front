@@ -1,24 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FormContainer from './FormContainer';
-import { ToastContainer } from 'react-toastify';
+import Navbar from './Navbar';
+import PurchasesList from './PurchasesList';
+import NotificationsContainer from './NotificationsContainer';
 
 export default function App() {
   return (
-    <>
-      <FormContainer />
+    <Router>
+      <Navbar />
 
+      <Switch>
+        <Route path='/purchases'>
+          <PurchasesList /> 
+        </Route>
+        <Route path='/'>
+          <FormContainer /> 
+        </Route>
+      </Switch>
 
-      <ToastContainer
-        position='top-right'
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-    </>
+      <NotificationsContainer />
+    </Router>
   );
 }

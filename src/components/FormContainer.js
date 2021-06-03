@@ -53,7 +53,7 @@ export default function FormContainer() {
   }
 
   return (
-    <div className='container p-5 form-container'>
+    <div className='container form-container'>
       <h1 className='font-weight-bold'>Create new purchase</h1>
 
       <div className='row pt-5 inputs-container'>
