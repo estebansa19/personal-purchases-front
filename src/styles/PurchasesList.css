@@ -1,0 +1,5 @@
+@media(max-width: 750px) {
+  .purchases-container {
+    padding-bottom: 2rem;
+  }
+}
