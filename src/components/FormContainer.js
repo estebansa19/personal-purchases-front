@@ -38,7 +38,7 @@ export default function FormContainer() {
         });
       })
       .catch(function() {
-        toast.success('❌ Error', {
+        toast.error('❌ Error', {
           position: 'top-right',
           autoClose: 3000,
           hideProgressBar: false,
