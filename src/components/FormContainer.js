@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import NumberFormat from 'react-number-format';
 import TextFieldsOutlinedIcon from '@material-ui/icons/TextFieldsOutlined';
 import AttachMoneyOutlinedIcon from '@material-ui/icons/AttachMoneyOutlined';
 import '../styles/FormContainer.css';
@@ -64,10 +65,10 @@ export default function FormContainer() {
                 <TextFieldsOutlinedIcon />
               </div>
 
-              <input 
-                type='text' 
-                className='form-control' 
-                placeholder='Some title' 
+              <input
+                type='text'
+                className='form-control'
+                placeholder='Some title'
                 name='title'
                 onChange={handleChange}
                 value={state.title}
@@ -79,14 +80,13 @@ export default function FormContainer() {
                 <AttachMoneyOutlinedIcon />
               </div>
 
-              <input 
-                type='number' 
-                className='form-control' 
+              <NumberFormat
+                thousandSeparator={true}
+                prefix={'$'}
                 placeholder='123'
-                name='value' 
-                onChange={handleChange}
+                className='form-control'
                 value={state.value}
-                required={true}
+                onValueChange={handleChange}
               />
             </div>
 

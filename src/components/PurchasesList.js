@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import NumberFormat from 'react-number-format';
 import Loading from './Loading';
 import '../styles/PurchasesList.css';
 
@@ -41,10 +42,12 @@ export default function PurchasesList() {
               <ul>
                 {record.purchases.map(function(purchase) {
                   return(
-                    <li>{
-                      purchase.title && purchase.value ? 
-                      `${purchase.title} - ${purchase.value}` : 
-                      `${purchase.title}`}
+                    <li>
+                      {
+                        purchase.title && purchase.value ?
+                        <NumberFormat value={purchase.value} displayType={'text'} thousandSeparator={true} prefix={'$'} renderText={(value) => <div>{`${purchase.title} - ${value}`}</div>} /> :
+                        `${purchase.title}`
+                      }
                     </li>
                   )
                 })}
