@@ -11,9 +11,12 @@ export default function FormContainer() {
   const [state, setState] = useState({ title: '', value: '' });
 
   const handleChange = (e) => {
-    debugger
     const { name, value } = e.currentTarget;
     setState({ ...state, [name]: value });
+  }
+
+  const handlePriceChange = (e) => {
+    setState({ ...state, value: e.value });
   }
 
   const handleSubmit = async (e) => {
@@ -86,7 +89,7 @@ export default function FormContainer() {
                 placeholder='123'
                 className='form-control'
                 value={state.value}
-                onValueChange={handleChange}
+                onValueChange={handlePriceChange}
               />
             </div>
 
